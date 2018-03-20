@@ -15,7 +15,7 @@
     <tr th:each="author : ${authors}">
         <td th:text="${author.name}">-</td>
         <td th:text="${author.surname}">-</td>
-        <td th:text="${author.books}">-</td>
+        <td> <p th:each="book : ${author.books}"> <span th:text="${book.title}">-</span> </p></td>
     </tr>
 
 </table>

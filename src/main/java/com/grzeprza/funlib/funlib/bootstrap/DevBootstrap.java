@@ -32,6 +32,22 @@ public class DevBootstrap implements ApplicationListener<ContextRefreshedEvent>{
     }
 
     private void initStaticData() {
+        Publisher publisher = new Publisher();
+        publisher.setName("Grzeprza Books");
+        publisherRepository.save(publisher);
+
+        //Eric
+        Author author = new Author("Grze", "Prza");
+        Book  book = new Book();
+        book.setPublisher(publisher);
+        book.setISBN("1234");
+        book.setTitle("Spring Boot - new beginnings");
+        book.setDescription("I hope you will be able to compile it");
+        author.getBooks().add(book);
+        book.getAuthors().add(author);
+
+        authorRepository.save(author);
+        bookRepository.save(book);
 
     }
 }

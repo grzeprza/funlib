@@ -13,7 +13,7 @@
     </tr>
     <tr th:each="publisher : ${publishers}">
         <td th:text="${publisher.name}">-</td>
-        <td th:text="${publisher.books}">-</td>
+        <td><p th:each="book : ${publisher.books}"><span th:text="${book.title}"></span><p></td>
     </tr>
 
 </table>
