@@ -14,13 +14,12 @@ public class Publisher {
 
     private String name;
 
-    @NotNull
     @OneToMany(mappedBy = "publisher")
     private Set<Book> books = new HashSet<>();
 
     public Publisher(){}
 
-    public Publisher(String name, @NotNull Set<Book> books) {
+    public Publisher(String name, Set<Book> books) {
         this.name = name;
         this.books = books;
     }
