@@ -1,20 +1,21 @@
 package com.grzeprza.funlib.funlib.controller;
 
 import com.grzeprza.funlib.funlib.repository.BookRepository;
+import com.grzeprza.funlib.funlib.repository.PublisherRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class BookController {
+public class PublisherController {
 
-    private BookRepository bookRepository;
+    private PublisherRepository publisherRepository;
 
-    @RequestMapping("/books")
+    @RequestMapping("/publishers")
     public String getAllBooks(Model model){
-        model.addAttribute("books", bookRepository.findAll());
+        model.addAttribute("publishers", publisherRepository.findAll());
 
-        return "books";
+        return "publishers";
     }
 
 }
