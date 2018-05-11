@@ -11,6 +11,7 @@ import java.util.Set;
 @Data
 @Entity
 @ToString
+@EqualsAndHashCode(exclude = {"books"})
 public class Publisher {
 
     @Id

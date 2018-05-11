@@ -11,7 +11,7 @@ import java.util.Set;
 @Data
 @Entity
 @ToString
-@EqualsAndHashCode
+@EqualsAndHashCode(exclude = {"authors"})
 public class Book {
 
     @Id
