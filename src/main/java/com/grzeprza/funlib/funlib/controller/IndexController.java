@@ -16,7 +16,7 @@ public class IndexController {
     }
 
     @RequestMapping({"/", "", "/index"})
-    public String index(Model model){
+    public String getIndexPage(Model model){
 
         model.addAttribute("allBooks", bookService.findAllBooks());
 
