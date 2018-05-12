@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping(value = {"/", "/index"})
 public class IndexController {
 
-    public Model index(Model model){
-        return model;
+    public String index(Model model){
+        return "index";
     }
 
 }
