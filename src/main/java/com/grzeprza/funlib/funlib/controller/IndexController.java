@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @Slf4j
-@RequestMapping(value = {"/", "/index"})
+@RequestMapping(value = {"", "/", "/index"})
 public class IndexController {
 
     public String index(Model model){
