@@ -43,7 +43,7 @@ public class LibraryServiceImpl implements LibraryService{
         else {
             Book newBook = book;
             newBook.setPublisher(pub);
-            newBook.setISBN(book.getISBN());
+            newBook.setIsbn(book.getIsbn());
             newBook.setTitle(book.getTitle());
             newBook.setDescription(book.getDescription());
             aut.getBooks().add(newBook);

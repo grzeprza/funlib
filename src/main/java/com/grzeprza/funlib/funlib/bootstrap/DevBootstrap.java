@@ -23,19 +23,19 @@ public class DevBootstrap implements ApplicationListener<ContextRefreshedEvent>{
     private void initStaticData() {
         //
         Book  book = new Book();
-        book.setISBN("1234");
+        book.setIsbn("1234");
         book.setTitle("Spring Boot - new beginnings");
         book.setDescription("I hope you will be able to compile it");
         libRepo.addBook(book, "Grze", "Prza", "GPPublishing");
 
         Book book1 = new Book();
-        book1.setISBN("2345");
+        book1.setIsbn("2345");
         book1.setTitle("Z dupy");
         book1.setDescription("Od zera do milionera");
         libRepo.addBook(book1, "Marcin", "Kras", "MKPublishing");
 
         Book book2 = new Book();
-        book1.setISBN("3456");
+        book2.setIsbn("3456");
         book2.setTitle("Ekonomia buraka");
         book2.setDescription("Jak Burak postrzega swiat");
         libRepo.addBook(book2, "Adam","Buracz", "ABPublishing");
