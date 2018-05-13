@@ -39,5 +39,18 @@ public class DevBootstrap implements ApplicationListener<ContextRefreshedEvent>{
         book2.setTitle("Ekonomia buraka");
         book2.setDescription("Jak Burak postrzega swiat");
         libRepo.addBook(book2, "Adam","Buracz", "ABPublishing");
+
+        Book  book3 = new Book();
+        book3.setIsbn("4567");
+        book3.setTitle("Thymeleaf: design uncharted");
+        book3.setDescription("Developer guide to sweet design");
+        libRepo.addBook(book3, "Anonim", "Anonimus", "GPPublishing");
+
+        Book book4 = new Book();
+        book4.setIsbn("5678");
+        book4.setTitle("Z/od bytu");
+        book4.setDescription("The journey for the one cheeseburger");
+        libRepo.addBook(book4, "Marcin","Kras", "ABPublishing");
+
     }
 }

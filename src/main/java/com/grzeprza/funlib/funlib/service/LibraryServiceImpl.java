@@ -11,6 +11,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
+
 @Service
 @Slf4j
 public class LibraryServiceImpl implements LibraryService{
@@ -24,6 +26,7 @@ public class LibraryServiceImpl implements LibraryService{
     @Autowired
     PublisherRepository publisherRepository;
 
+    @Transactional
     public boolean addBook(Book book, String authorName, String authorSurname, String publisher){
         log.debug("Start adding book " + book.getTitle() + " " + authorSurname + " " + publisher);
         Publisher pub = publisherRepository.findByName(publisher);
