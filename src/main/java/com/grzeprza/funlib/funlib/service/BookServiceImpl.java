@@ -23,4 +23,10 @@ public class BookServiceImpl implements BookService{
         log.debug(String.format("Found %d books", books.size()));
         return books;
     }
+
+    @Override
+    public Book findBookByISBN(String ISBN) {
+        Book book = bookRepository.findByIsbn(ISBN);
+        return book;
+    }
 }

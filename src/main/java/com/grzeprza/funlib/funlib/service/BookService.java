@@ -8,4 +8,6 @@ public interface BookService {
 
     List<Book> findAllBooks();
 
+    Book findBookByISBN(String ISBN);
+
 }

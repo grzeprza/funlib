@@ -4,7 +4,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
-    <title>Books</title>
+    <title th:text="'ISBN: ' + ${book.isbn}"></title>
 
     <!-- Compiled and minified CSS For Boostrap MVN dependency-->
     <link rel="stylesheet" th:href="@{/webjars/bootstrap/4.1.0/css/bootstrap.min.css}">
@@ -19,7 +19,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-            <a class="nav-item nav-link active" href="/books">Books<span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link" href="/books">Books<span class="sr-only">(current)</span></a>
             <a class="nav-item nav-link" href="/authors">Authors</a>
             <a class="nav-item nav-link" href="/publishers">Publishers</a>
         </div>
@@ -27,20 +27,11 @@
 </nav>
 
 <div class="container">
-    <h1>Books</h1>
-    <table class="table table-striped table-hover">
-        <tr>
-            <th>Title</th>
-            <th>Author</th>
-            <th>Publisher</th>
-        </tr>
-        <tr th:each="book : ${books}">
-            <td ><a th:href="@{'/books/' + ${book.isbn}}"><span th:text="${book.title}"></span></a></td>
-            <td><p th:each="author : ${book.authors}"><span th:text="${author.name}"></span> <span th:text="${author.surname}"></span><p></td>
-            <td th:text="${book.publisher.name}">-</td>
-        </tr>
-
-    </table>
+    <h1 th:text="${book.title}"></h1>
+    <p th:each="author : ${book.authors}">
+         <a th:href="@{'/authors/' + ${author.name}}"><span th:text="${author.name}"></span></a>
+    </p>
+    <p><a th:href="@{'/publishers/' + ${book.publisher.name}}"><span th:text="${book.publisher.name}"></span></a></p>
 </div><!-- /.container -->
 
 <!-- jQuery core MVN dependency-->
