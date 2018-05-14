@@ -8,7 +8,7 @@ import java.util.Set;
 
 @Data
 @Entity
-@ToString
+@ToString(exclude = {"authors"})
 @EqualsAndHashCode(exclude = {"authors"})
 public class Book {
 
