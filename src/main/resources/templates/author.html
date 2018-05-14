@@ -4,7 +4,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
-    <title>Authors</title>
+    <title th:text="${author.surname}"></title>
 
     <!-- Compiled and minified CSS For Boostrap MVN dependency-->
     <link rel="stylesheet" th:href="@{/webjars/bootstrap/4.1.0/css/bootstrap.min.css}">
@@ -19,25 +19,23 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-            <a class="nav-item nav-link" href="/books">Books</a>
-            <a class="nav-item nav-link active" href="/authors">Authors<span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link" href="/books">Books<span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link" href="/authors">Authors</a>
             <a class="nav-item nav-link" href="/publishers">Publishers</a>
         </div>
     </div>
 </nav>
 
-<div class="container">
-<h1>Authors</h1>
-<table class="table table-striped">
-    <tr>
-        <th>Name & Surname</th>
-        <th>Books</th>
-    </tr>
-    <tr th:each="author : ${authors}">
-        <td><a th:href="@{'/authors/'+${author.name}+'/'+${author.surname}}"><span th:text="${author.name}+' '+${author.surname}">-</span></a></td>
-        <td> <p th:each="book : ${author.books}"> <span th:text="${book.title}">-</span> </p></td>
-    </tr>
-</table>
+<div class="container" >
+    <h1 th:text="'Author: '+${author.name} + ' '+ ${author.surname}"></h1>
+    <main th:each="book:${author.books}" class="jumbotron" role="article">
+        <h1 th:text="${book.title}"></h1>
+        <p class="lead">
+            <span th:text="${book.description}">-</span>
+            <a th:href="@{'/publishers/' + ${book.publisher.name}}"><span th:text="${book.publisher.name}"></span></a>
+        </p>
+        <a class="btn btn-lg btn-primary" th:href="@{'/books/' + ${book.isbn}}" role="button">Details &raquo;</a>
+    </main>
 </div><!-- /.container -->
 
 <!-- jQuery core MVN dependency-->
@@ -47,3 +45,4 @@
 
 </body>
 
+</html>
