@@ -10,7 +10,7 @@ import java.util.Set;
 
 @Data
 @Entity
-@ToString
+@ToString(exclude = {"books"})
 @EqualsAndHashCode(exclude = {"books"})
 public class Publisher {
 
