@@ -27,11 +27,51 @@
 </nav>
 
 <div class="container">
+    <!-- <img th:src="*{'data:image/jpg;charset=utf-8;base64,'+ book.cover}" alt="Book Cover" height="200" th:width="100"> -->
+    <br/>
     <h1 th:text="${book.title}"></h1>
-    <p th:each="author : ${book.authors}">
-         <a th:href="@{'/authors/' + ${author.name}}"><span th:text="${author.name}"></span></a>
-    </p>
-    <p><a th:href="@{'/publishers/' + ${book.publisher.name}}"><span th:text="${book.publisher.name}"></span></a></p>
+    <br/>
+    <div class="card">
+        <h5 class="card-header">Description</h5>
+        <div class="card-body">
+            <p class="card-text" th:text="${book.description}">-</p>
+        </div>
+    </div>
+    <br/>
+    <div class="card">
+        <h5 class="card-header">Author(s)</h5>
+        <div class="card-body">
+            <p class="card-text" th:each="author : ${book.authors}">
+                <a th:href="@{'/authors/' + ${author.name}+'/'+${author.surname}}"><span th:text="${author.name}+ ' ' + ${author.surname}"></span></a>
+            </p>
+        </div>
+    </div>
+    <br/>
+    <div class="card">
+        <h5 class="card-header">Publisher(s)</h5>
+        <div class="card-body">
+            <p class="card-text"><a th:href="@{'/publishers/' + ${book.publisher.name}}"><span th:text="${book.publisher.name}"></span></a></p>
+        </div>
+    </div>
+    <br/>
+    <div class="card">
+        <h5 class="card-header">Audiobook</h5>
+        <div class="card-body">
+            <p class="card-text"><span th:text="${'Language: '+book.audiobookLanguage}"></span></p>
+            <p class="card-text"><span>Link: </span><a href="#"><span th:text="${book.audiobookUrl}"></span></a></p>
+            <a href="#" class="btn btn-primary">Download</a>
+        </div>
+    </div>
+    <br/>
+    <div class="card">
+        <h5 class="card-header">Read</h5>
+        <div class="card-body">
+            <p class="card-text"><span th:text="${'Original language: '+book.originalLanguage}"></span></p>
+            <p class="card-text"><span th:text="${'PDF language: '+book.language}"></span></p>
+            <p class="card-text"><span>Link: </span><a href="#"><span th:text="${book.pdfUrl}"></span></a></p>
+            <a href="#" class="btn btn-primary">Download</a>
+        </div>
+    </div>
 </div><!-- /.container -->
 
 <!-- jQuery core MVN dependency-->
