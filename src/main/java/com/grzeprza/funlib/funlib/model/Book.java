@@ -50,7 +50,7 @@ public class Book {
 
     @Column(name = "book_cover")
     @Lob
-    private Byte[] cover;
+    private byte[] cover;
 
     @Column(name = "book_page_count")
     private Integer pageCount;
@@ -63,6 +63,9 @@ public class Book {
 
     @Column(name = "book_audio_lang")
     private Locale audiobookLanguage;
+
+    @Column(name = "book_pdf_uri")
+    private URI pdfUrl;
 
     @ManyToMany
     @JoinTable(name =  "author_book", joinColumns = @JoinColumn(name = "book_id"), inverseJoinColumns = @JoinColumn(name = "author_id"))
