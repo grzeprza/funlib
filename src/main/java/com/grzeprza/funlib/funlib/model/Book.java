@@ -36,7 +36,7 @@ public class Book {
 
     @OneToMany(mappedBy = "book")
     @Column(name = "book_comments")
-    private List<Commentary> commentaryList;
+    private List<Reports> reportsList;
 
     @Column(name = "book_year")
     private LocalDate publicationYear;

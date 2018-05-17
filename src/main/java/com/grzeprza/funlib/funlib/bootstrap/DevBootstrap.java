@@ -7,7 +7,6 @@ import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
 import sun.misc.IOUtils;
-import sun.nio.ch.IOUtil;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -41,7 +40,7 @@ public class DevBootstrap implements ApplicationListener<ContextRefreshedEvent>{
         book.setAudiobookUrl(URI.create("www.linkAudio.com"));
         book.setPdfUrl(URI.create("www.linkPdf.com"));
         book.setCategory(BookCategory.SELFDEV);
-        book.setCommentaryList(null);
+        book.setReportsList(null);
         book.setPageCount(999);
         try {
             book.setCover(IOUtils.readFully(is, Integer.MAX_VALUE, false));
@@ -62,7 +61,7 @@ public class DevBootstrap implements ApplicationListener<ContextRefreshedEvent>{
         book1.setAudiobookUrl(URI.create("www.linkAudio.com"));
         book1.setPdfUrl(URI.create("www.linkPdf.com"));
         book1.setCategory(BookCategory.SELFDEV);
-        book1.setCommentaryList(null);
+        book1.setReportsList(null);
         book1.setPageCount(999);
         try {
             book1.setCover(IOUtils.readFully(is, Integer.MAX_VALUE, false));
@@ -83,7 +82,7 @@ public class DevBootstrap implements ApplicationListener<ContextRefreshedEvent>{
         book2.setAudiobookUrl(URI.create("www.linkAudio.com"));
         book2.setPdfUrl(URI.create("www.linkPdf.com"));
         book2.setCategory(BookCategory.SELFDEV);
-        book2.setCommentaryList(null);
+        book2.setReportsList(null);
         book2.setPageCount(999);
         try {
             book2.setCover(IOUtils.readFully(is, Integer.MAX_VALUE, false));
@@ -104,7 +103,7 @@ public class DevBootstrap implements ApplicationListener<ContextRefreshedEvent>{
         book3.setAudiobookUrl(URI.create("www.linkAudio.com"));
         book3.setPdfUrl(URI.create("www.linkPdf.com"));
         book3.setCategory(BookCategory.SELFDEV);
-        book3.setCommentaryList(null);
+        book3.setReportsList(null);
         book3.setPageCount(999);
         try {
             book3.setCover(IOUtils.readFully(is, Integer.MAX_VALUE, false));
@@ -125,7 +124,7 @@ public class DevBootstrap implements ApplicationListener<ContextRefreshedEvent>{
         book4.setAudiobookUrl(URI.create("www.linkAudio.com"));
         book4.setPdfUrl(URI.create("www.linkPdf.com"));
         book4.setCategory(BookCategory.SELFDEV);
-        book4.setCommentaryList(null);
+        book4.setReportsList(null);
         book4.setPageCount(999);
         try {
             book4.setCover(IOUtils.readFully(is, Integer.MAX_VALUE, false));

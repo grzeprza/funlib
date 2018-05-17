@@ -7,20 +7,20 @@ import java.time.LocalDateTime;
 
 @Entity
 @Data
-public class Commentary {
+public class Reports {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-//    @Column(name = "comm_id")
+    @Column(name = "repo_id")
     private Long id;
 
-//    @Column(name = "comm_auth")
+    @Column(name = "repo_auth")
     private String auth;
 
-//    @Column(name = "comm_comment")
+    @Column(name = "repo_comment")
     private String commentary;
 
-//    @Column(name = "comm_date")
+    @Column(name = "repo_date")
     private LocalDateTime date;
 
     @ManyToOne
