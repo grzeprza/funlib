@@ -1,6 +1,7 @@
 package com.grzeprza.funlib.funlib.model;
 
 import lombok.*;
+import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -22,6 +23,9 @@ public class Author {
     @Column(name = "auth_id")
     private Long id;
 
+    @Column(name = "auth_ref_nr")
+    private Long ref_nr;
+
     @Column(name = "auth_name")
     private String name;
 
@@ -29,22 +33,23 @@ public class Author {
     private String surname;
 
     @Column(name = "auth_birthdate")
-    private LocalDateTime birthDate;
+    private LocalDate birthDate;
 
     @Column(name = "auth_deathdate")
-    private LocalDateTime deathDate;
+    private LocalDate deathDate;
 
     @Column(name = "auth_web_uri")
-    private URI personalWebsiteURI;
+    private String personalWebsiteURI;
 
     @Lob
     @Column(name = "auth_picture")
-    private Byte[] picture;
+    private byte[] picture;
 
     @ManyToMany(mappedBy = "authors")
     private Set<Book> books = new HashSet<>();
 
-    public Author(){}
+    public Author(){
+    }
 
     public Author( String name, String surname) {
         this.name = name;

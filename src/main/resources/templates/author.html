@@ -27,16 +27,55 @@
 </nav>
 
 <div class="container" >
-    <h1 th:text="'Author: '+${author.name} + ' '+ ${author.surname}"></h1>
-    <main th:each="book:${author.books}" class="jumbotron" role="article">
-        <h1 th:text="${book.title}"></h1>
-        <p class="lead">
-            <span th:text="${book.description}">-</span>
-            <a th:href="@{'/publishers/' + ${book.publisher.name}}"><span th:text="${book.publisher.name}"></span></a>
-        </p>
-        <a class="btn btn-lg btn-primary" th:href="@{'/books/' + ${book.isbn}}" role="button">Details &raquo;</a>
-    </main>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                <img src="#" />
+            </div>
+            <div class="col-sm-5">
+                <div class="row">
+                    <div class="col-sm-10">
+                        <h1 th:text="${author.name} + ' ' + ${author.surname}"></h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-10">
+                        <span th:text="${author.personalWebsiteURI}"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card text-center">
+        <h5 class="card-header">Books</h5>
+        <div class="card-body">
+            <div class="card-deck">
+                <div th:each="book:${author.books}" class="card" style="width: 18rem;">
+                    <img class="card-img-top" src=".../100px180/?text=Image cap" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title" th:text="${book.title}">Card title</h5>
+                        <p class="card-text" th:text="${book.shortDescription}">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <a class="btn btn-lg btn-info" th:href="@{ ${book.audiobookUrl}}" role="button">Listen</a>
+                            <a class="btn btn-lg btn-warning" th:href="@{ ${book.pdfUrl}}" role="button">Read</a>
+                        </li>
+                    </ul>
+                    <div class="card-body">
+                        <a th:href="@{'/publishers/' + ${book.publisher.name}}"><span th:text="${book.publisher.name}"></span></a>
+                    </div>
+                    <div class="card-footer text-muted">
+                        <a class="btn btn-lg btn-primary" th:href="@{'/books/' + ${book.isbn}}" role="button">Read more..</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<br/>
 </div><!-- /.container -->
+
 
 <!-- jQuery core MVN dependency-->
 <script th:src="@{/webjars/jquery/3.3.1/jquery.min.js}"></script>
