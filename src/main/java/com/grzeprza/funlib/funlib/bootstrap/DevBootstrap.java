@@ -2,6 +2,7 @@ package com.grzeprza.funlib.funlib.bootstrap;
 
 import com.grzeprza.funlib.funlib.enums.BookCategory;
 import com.grzeprza.funlib.funlib.model.Book;
+import com.grzeprza.funlib.funlib.service.LibraryService;
 import com.grzeprza.funlib.funlib.service.LibraryServiceImpl;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
@@ -17,9 +18,9 @@ import java.util.Locale;
 @Component
 public class DevBootstrap implements ApplicationListener<ContextRefreshedEvent>{
 
-   private LibraryServiceImpl libRepo;
+   private LibraryService libRepo;
 
-    public DevBootstrap(LibraryServiceImpl libRepo) {
+    public DevBootstrap(LibraryService libRepo) {
         this.libRepo = libRepo;
     }
 

@@ -1,5 +1,6 @@
 package com.grzeprza.funlib.funlib.repository;
 
+import com.grzeprza.funlib.funlib.dto.AuthorDTO;
 import com.grzeprza.funlib.funlib.model.Author;
 import org.springframework.data.repository.CrudRepository;
 

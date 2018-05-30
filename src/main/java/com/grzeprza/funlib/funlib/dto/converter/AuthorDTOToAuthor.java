@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class AuthorDTOToAuthor implements Converter<AuthorDTO, Author> {
-    
+
     @Synchronized
     @Nullable
     @Override
