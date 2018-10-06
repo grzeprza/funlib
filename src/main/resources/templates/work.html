@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.w3.org/1999/xhtml">
+<head th:include="fragments.html::header">
+    //header
+</head>
+<body>
+<nav th:replace="fragments.html::navbar">
+    //nav
+</nav>
+
+<div th:fragment="workFragment" class="container">
+    <!-- <img th:src="*{'data:image/jpg;charset=utf-8;base64,'+ work.cover}" alt="Work Cover" height="200" th:width="100"> -->
+    <br/>
+    <form>
+        <div class="form-group row">
+            <!--<label for="category1" class="col-sm-2 col-form-label">Category</label>-->
+            <div class="col-sm-10 form-inline">
+                <h1>
+                    <input type="text" th:readonly="true" class="form-control-plaintext"  th:value="${work.workTitle}"/>
+                </h1>
+                &nbsp;
+                <button class="btn btn-primary" type="button" id="editForm">Edit</button>
+            </div>
+        </div>
+        <div class="card">
+            <h5 class="card-header"><label for="authors">Author(s)</label></h5>
+            <div class="card-body">
+                <div class="form-group row">
+                    <!--<label for="category1" class="col-sm-2 col-form-label">Category</label>-->
+                    <div class="col-sm-10">
+                        <input type="text" th:readonly="true" id="authors" class="form-control-plaintext"  th:value="${work.authorsFullNames}">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br/>
+        <div class="card">
+            <h5 class="card-header">Source</h5>
+            <div class="card-body">
+                <div class="form-group row">
+                    <label for="language" class="col-sm-2 col-form-label">Language</label>
+                    <div class="col-sm-10">
+                        <input type="text" th:readonly="true" id="language" class="form-control-plaintext"  th:value="${work.workLanguage.language}">
+                    </div>
+                </div>
+                    <div th:if="true">
+                        <div class="form-group row">
+                            <label for="length" class="col-sm-2 col-form-label">Length</label>
+                            <div class="col-sm-10">
+                                <input type="text" th:readonly="true" id="length" class="form-control-plaintext"  th:value="${work.workLength + ' ' + work.workLengthUnit.shortName}">
+                            </div>
+                    </div>
+                    <div th:unless="true">
+                        <div class="form-group row">
+                            <label for="lengthEdit" class="col-sm-2 col-form-label">Length</label>
+                            <div class="col-sm-10">
+                                <input type="text" th:readonly="true" id="lengthEdit" class="form-control-plaintext"  th:value="${work.workLength}">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="unitEdit" class="col-sm-2 col-form-label">Length unit</label>
+                            <div class="col-sm-10">
+                                <input type="text" id="unitEdit" class="form-control-plaintext"  th:value="${work.workLengthUnit.shortName}">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="category1" class="col-sm-2 col-form-label">Category</label>
+                    <div class="col-sm-10">
+                        <input type="text" th:readonly="true" id="category1" class="form-control-plaintext"  th:value="${work.category}">
+                    </div>
+                </div>
+                <a hidden th:href="${work.workLink}" class="btn btn-primary">Download</a>
+            </div>
+        </div>
+        <br/>
+    </form>
+</div>
+
+<div class="container" th:replace="fragments.html::footer">
+    //footer
+</div>
+
+<script type="text/javascript">
+    $("#editForm").click(function(){
+        console.log("Edyta");
+    });
+</script>
+
+</body>
+</html>

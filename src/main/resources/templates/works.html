@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.w3.org/1999/xhtml">
+<head th:include="fragments.html::header">
+    //header
+</head>
+<body>
+<nav th:replace="fragments.html::navbar">
+    //nav
+</nav>
+
+<div th:fragment="workFragment"  class="container">
+    <h1>Works</h1>
+    <table class="table table-striped table-hover">
+        <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Publisher</th>
+        </tr>
+        <tr th:each="work:${works}">
+            <td ><span th:text="${work.workTitle}"></span></td>
+            <td><p th:each="author:${work.getAuthorsFullNames()}"><span th:text="${author}"></span><p></td>
+            <td th:text="${work.workType}">-</td>
+            <td><a th:href="@{'/works/'+${work.id}}">Details</a></td>
+        </tr>
+
+    </table>
+</div><!-- /.container -->
+
+<div class="container" th:replace="fragments.html::footer">
+    //footer
+</div>
+
+</body>
+</html>

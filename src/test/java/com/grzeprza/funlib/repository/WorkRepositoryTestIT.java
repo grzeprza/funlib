@@ -1,6 +1,6 @@
 package com.grzeprza.funlib.repository;
 
-import com.grzeprza.funlib.model.Book;
+import com.grzeprza.funlib.model.Work;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -14,18 +14,18 @@ import static org.junit.Assert.*;
 
 @RunWith(SpringRunner.class)
 @DataJpaTest
-public class BookRepositoryTestIT {
+public class WorkRepositoryTestIT {
 
-    @Autowired
-    BookRepository bookRepository;
-
-    @Before
-    public void setUp() throws Exception {
-    }
-
-    @Test
-    public void findByTitle() {
-        Optional<Book> book = Optional.ofNullable(bookRepository.findByTitle("Spring Boot - new beginnings"));
-        assertEquals(false, book.isPresent());
-    }
+//    @Autowired
+//    WorkRepository workRepository;
+//
+//    @Before
+//    public void setUp() throws Exception {
+//    }
+//
+//    @Test
+//    public void findByTitle() {
+//        Optional<Work> book = Optional.ofNullable(workRepository.findByTitle("Spring Boot - new beginnings"));
+//        assertEquals(false, book.isPresent());
+//    }
 }

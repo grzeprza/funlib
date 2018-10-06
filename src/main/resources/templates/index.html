@@ -1,46 +1,28 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="UTF-8">
-    <title>FunLib</title>
-
-    <!-- Compiled and minified CSS For Boostrap MVN dependency-->
-    <link rel="stylesheet" th:href="@{/webjars/bootstrap/4.1.0/css/bootstrap.min.css}">
-
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.w3.org/1999/xhtml">
+<head th:include="fragments.html::header">
+    //header
 </head>
 <body>
-
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark " >
-    <a class="navbar-brand" href="/">FunLib</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-            <a class="nav-item nav-link" href="/books">Books</a>
-            <a class="nav-item nav-link" href="/authors">Authors</a>
-            <a class="nav-item nav-link" href="/publishers">Publishers</a>
-        </div>
-    </div>
+<nav th:replace="fragments.html::navbar">
+    //nav
 </nav>
-<div class="container ">
-    <form class="form-group">
+
+<div class="container">
+    <form layout:fragment="searchFragment" class="form-group"  >
         <div class="form-row d-flex justify-content-center p-3">
-             <input autofocus class=" form-control" type="search" placeholder="What would you like to read/listen to?" aria-label="Search">
+            <input autofocus class=" form-control" type="search" th:value="${searchPhrase}" placeholder="What would you like to read/listen to?" aria-label="Search">
         </div>
         <div class="form-row d-flex justify-content-center p-3">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </div>
     </form>
-</div><!-- /.container -->
+</div>
 
-<!-- jQuery core MVN dependency-->
-<script th:src="@{/webjars/jquery/3.3.1/jquery.min.js}"></script>
-<!-- Compiled and minified JavaScript For Bootstrap MVN dependency-->
-<script th:src="@{/webjars/bootstrap/4.1.0/js/bootstrap.min.js}"></script>
+
+<div class="container" th:replace="fragments.html::footer">
+    //footer
+</div>
 
 </body>
-
 </html>
