@@ -18,7 +18,7 @@ public enum WorkLengthUnit {
     public static WorkLengthUnit of(String value){
         for(WorkLengthUnit val: WorkLengthUnit.values()){
             if(val.shortName.equals(value)){
-                return val;
+                return val; 
             }
         }
         return WorkLengthUnit.BLANK;

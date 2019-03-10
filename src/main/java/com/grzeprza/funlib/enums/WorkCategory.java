@@ -13,7 +13,7 @@ public enum WorkCategory {
     }
 
     WorkCategory(String name) {
-        this.displayName = name;
+        this.displayName = name; 
     }
 
     WorkCategory(){

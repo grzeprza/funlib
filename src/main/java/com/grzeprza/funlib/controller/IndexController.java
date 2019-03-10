@@ -1,10 +1,10 @@
 package com.grzeprza.funlib.controller;
 
 import com.grzeprza.funlib.service.WorkService;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class IndexController {
@@ -18,7 +18,7 @@ public class IndexController {
     @RequestMapping({"/", "", "/index"})
     public String getIndexPage(Model model){
 //        model.addAttribute("content","main::searchFragment");
-        return "index";
+        return "index"; 
     }
 
 //    @RequestMapping(value = "")

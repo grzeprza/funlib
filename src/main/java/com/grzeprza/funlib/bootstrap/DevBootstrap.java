@@ -1,16 +1,16 @@
 package com.grzeprza.funlib.bootstrap;
 
+import java.util.Locale;
+
 import com.grzeprza.funlib.enums.WorkCategory;
 import com.grzeprza.funlib.enums.WorkLengthUnit;
 import com.grzeprza.funlib.enums.WorkType;
 import com.grzeprza.funlib.model.Work;
 import com.grzeprza.funlib.service.WorkService;
+
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
-import org.thymeleaf.util.SetUtils;
-
-import java.util.Locale;
 
 @Component
 public class DevBootstrap implements ApplicationListener<ContextRefreshedEvent>{

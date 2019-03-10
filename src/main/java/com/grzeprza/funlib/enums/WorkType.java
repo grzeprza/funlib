@@ -10,7 +10,7 @@ public enum WorkType {
     public static WorkType of(String value){
         String val = value.toUpperCase();
         for(WorkType workType: WorkType.values()){
-            if(val.equals(workType.name())){
+            if(val.equals(workType.name())){ 
                 return workType;
             }
         }

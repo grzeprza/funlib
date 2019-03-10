@@ -1,13 +1,14 @@
 package com.grzeprza.funlib.service;
 
+import java.util.List;
+import java.util.Locale;
+
 import com.grzeprza.funlib.enums.WorkCategory;
 import com.grzeprza.funlib.enums.WorkType;
 import com.grzeprza.funlib.model.Work;
 import com.grzeprza.funlib.repository.WorkRepository;
-import org.springframework.stereotype.Service;
 
-import java.util.List;
-import java.util.Locale;
+import org.springframework.stereotype.Service;
 
 @Service
 public class WorkServiceImp implements WorkService {
@@ -15,7 +16,7 @@ public class WorkServiceImp implements WorkService {
     private final WorkRepository workRepository;
 
     public WorkServiceImp(WorkRepository workRepository) {
-        this.workRepository = workRepository;
+        this.workRepository = workRepository; 
     }
 
     @Override

@@ -1,15 +1,14 @@
 package com.grzeprza.funlib.model;
 
+import java.util.Locale;
+
+import javax.persistence.*;
+
 import com.grzeprza.funlib.enums.WorkCategory;
 import com.grzeprza.funlib.enums.WorkLengthUnit;
 import com.grzeprza.funlib.enums.WorkType;
-import lombok.*;
 
-import javax.persistence.*;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Locale;
-import java.util.Set;
+import lombok.*;
 
 @Entity
 @Data
@@ -20,7 +19,7 @@ public class Work {
     @Id
     @Column(name = "work_id")
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private Long id; 
 
     @Column(name = "work_title")
     private String workTitle;

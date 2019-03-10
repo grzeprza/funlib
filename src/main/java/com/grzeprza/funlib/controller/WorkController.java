@@ -1,6 +1,7 @@
 package com.grzeprza.funlib.controller;
 
 import com.grzeprza.funlib.service.WorkService;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,7 +21,7 @@ public class WorkController {
     @GetMapping
     public String getAllWorks(Model model){
         model.addAttribute("works",workService.findAll());
-        return "works";
+        return "works"; 
     }
 
     @GetMapping("/{id}")
